@@ -1,4 +1,4 @@
-** Things done :
+## Things done :
 
 - Able to add new node , new node is added under parent node so make sure no other node exist in the same place to avoid collision
 
@@ -11,6 +11,6 @@
 - Able to delete nodes but delete working correclty only for leaf nodes
 
 
-** Things not done due to time :
+## Things not done due to time :
 
 - Add time ranges for business hours 
