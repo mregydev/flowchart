@@ -1,0 +1,82 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type": "trigger",
+      "label": "trigger",
+      "data": {
+        "description": "Conversation Opened"
+      },
+      "position":{"x":400,"y":20}
+    },
+    {
+        "id": "d09c08",
+        "type": "dateTime",
+        "label": "Business Hours",
+        "data": {
+          "description": "Business Hours"
+        },
+        "position":{"x":400,"y":160}
+      },
+
+    {
+      "id": "e879e4",
+      "type": "addComment",
+      "label": "Add Comment #1",
+      "data": {
+        "description": "User message during off hours"
+      },
+      "position":{"x":600,"y":620}
+    },
+
+    {
+      "id": "b6a0c1",
+      "type": "sendMessage",
+      "label": "Away Message",
+      "data": {
+        "description": "Sorry, we are currently away. We will respond as soon as possible.",
+        "imagesUrls":["https://fastly.picsum.photos/id/396/536/354.jpg?hmac=GmUosOuXb6nGkFhmTE-83i0ciQcaleMyvIyqzeFbW58"]
+      },
+      "position":{"x":600,"y":420}
+    },
+    {
+      "id": "b0653a",
+      "type": "sendMessage",
+      "label": "Welcome Message",
+      "data": {
+        "description": "Hello there welcome to the chat!"
+      },
+      "position":{"x":200,"y":420}
+    }
+  ],
+  "edges": [
+    {
+      "source": "1",
+      "target": "d09c08",
+      "type": "custom",
+
+      "id": "edg1"
+    },
+    {
+      "source": "d09c08",
+      "target": "b6a0c1",
+      "type": "custom",
+      "label": "Failure",
+      "id": "edg2"
+    },
+    {
+      "source": "d09c08",
+      "target": "b0653a",
+      "type": "custom",
+      "label": "Success",
+      "id": "edg3"
+    },
+    {
+      "source": "b6a0c1",
+      "target": "e879e4",
+      "type": "custom",
+      
+      "id": "edg4"
+    }
+  ]
+}
