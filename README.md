@@ -18,3 +18,5 @@ https://flowchart-sigma.vercel.app/
 ## Things not done due to time :
 
 - Add time ranges for business hours 
+
+- Missing unit test mostly I use vitest as test runner and vue test utils for component render and jest dom for dom assertions
