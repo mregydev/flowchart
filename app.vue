@@ -1,23 +1,23 @@
   <script lang="ts" setup>
-  import { ref } from 'vue'
+  import { type Component } from 'vue'
 
-  import { VueFlow, useVueFlow, type Node, type Edge } from '@vue-flow/core'
+  import { VueFlow } from '@vue-flow/core'
   import CustomNode from './components/CustomNode.vue'
   import type { NodeType } from './utils/types';
   import { useNodeStore } from './store/useNodeStore';
   import CustomEdge from './components/CustomEdge.vue';
   import '@vue-flow/core/dist/style.css';
 
-  const { onNodesChange, onEdgesChange } = useVueFlow()
+  
 
-  const nodeTypes: Record<NodeType, any> = {
+  const nodeTypes: Record<NodeType, Component> = {
     'addComment': CustomNode,
     'dateTime': CustomNode,
     'sendMessage': CustomNode,
     'trigger': CustomNode
   }
 
-  const edgeTypes: Record<string, any> = {
+  const edgeTypes: Record<string, Component> = {
     custom: CustomEdge
   }
   const store = useNodeStore()
